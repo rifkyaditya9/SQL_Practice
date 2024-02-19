@@ -1,3 +1,9 @@
+/*Proses Membuat Tabel:
+	- Barang
+	- Pelanggan
+	- Transaksi
+*/
+
 CREATE TABLE Barang (
 	id_barang INT IDENTITY(1,1) PRIMARY KEY,
 	nama_barang VARCHAR(255),
@@ -21,6 +27,9 @@ CREATE TABLE Transaksi (
 	id_barang INT FOREIGN KEY REFERENCES Barang(id_barang)
 );
 
+
+/*Proses Menambah data ke tabel Barang*/
+
 INSERT INTO Barang (nama_barang, kategori, harga, stok)
 VALUES 
 ('Aqua', 'Minuman', 3000, 1000),
@@ -38,6 +47,8 @@ VALUES
 ('Indomilk Susu Steril', 'Minuman', 4000, 3000);
 
 
+/*Proses Menambah data ke tabel Pelanggan*/
+
 INSERT INTO Pelanggan (nama_pelanggan, alamat_pelanggan, no_telp_pelanggan)
 VALUES
 ('Maman', 'Tangerang', 081277733366),
@@ -50,6 +61,9 @@ VALUES
 ('Wulan', 'Tangerang', 081217406729),
 ('Maya', 'Bandung', 081238591039),
 ('Agus', 'Jakarta', 0812402683088);
+
+
+/*Proses Menambah data ke tabel Transaksi*/
 
 INSERT INTO Transaksi (id_pelanggan, id_barang, tanggal_transaksi, jumlah)
 VALUES
@@ -64,6 +78,9 @@ VALUES
 (7, 3, '2024-01-22', 5),
 (2, 1, '2024-01-22', 6);
 
+
+/*Query untuk menampilkan masing-masing tabel 
+beserta isi datanya*/
 SELECT * FROM Pelanggan;
 SELECT * FROM Barang;
 SELECT * FROM Transaksi;
